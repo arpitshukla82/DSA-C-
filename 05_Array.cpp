@@ -175,7 +175,7 @@ int main(){
 
 // COUNT DIGITS IN A NUMBER
 
-#include<iostream>
+/*#include<iostream>
 
 using namespace std;
 
@@ -192,4 +192,48 @@ n = n/10;
 
  }
  cout<< count;
+}*/
+
+/*
+ * Author: Anisha
+ * UID: 23BCS13843
+ */
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+class Student {
+private:
+    string name;
+    string uid;
+
+public:
+    // Constructor
+    Student(string n, string u) : name(n), uid(u) {}
+
+    // Method to display details
+    void display() const {
+        cout << "Name: " << name << " | UID: " << uid << endl;
+    }
+};
+
+int main() {
+    // Create a vector to store Student objects
+    vector<Student> database;
+
+    // Add records to the database
+    database.push_back(Student("Anisha", "23BCS13843"));
+    database.push_back(Student("Alex", "24BCS10001"));
+
+    cout << "--- Student Database ---" << endl;
+    
+    // Iterate through the vector and display each record
+    for (const auto& student : database) {
+        student.display();
+    }
+    
+    return 0;
 }
+
