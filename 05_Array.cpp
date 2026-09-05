@@ -194,3 +194,44 @@ n = n/10;
  cout<< count;
 }*/
 
+//REVERSE A NUMBER
+/*
+REVERSE A NUMBER:
+
+1. digit = n % 10
+   -> Get the last digit.
+
+2. rev = rev * 10 + digit
+   -> rev * 10 shifts existing digits left.
+   -> + digit adds the new digit at the end.
+
+3. n = n / 10
+   -> Remove the last digit.
+
+Example: 12345
+
+5  -> rev = 5
+4  -> rev = 54
+3  -> rev = 543
+2  -> rev = 5432
+1  -> rev = 54321
+
+Pattern:
+digit = n % 10;
+rev = rev * 10 + digit;
+n = n / 10;
+*/
+
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cin >> n;
+    int revNum = 0;
+    while(n>0){
+        int ld = n%10;
+        revNum = (revNum * 10)+ld;
+        n= n/10;
+    }
+    cout << revNum;
+}
